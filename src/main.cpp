@@ -1,14 +1,20 @@
 #include<SFML/Graphics.hpp>
+#include "Player.hpp"
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(800,600),"Dungeon Escape");
 
+    //values for testing - not fixed 
     float speed = 100;
-    sf::RectangleShape player;
-    player.setSize(sf::Vector2f(50.f,50.f));
-    player.setFillColor(sf::Color::White);
-    player.setPosition(400,300);
+    int health = 50;
+    int attackPower = 50;
+    sf::Vector2f position(50.f,50.f);
+
+    //create player instance
+    Player player(health,attackPower,speed,position);
+    
+    
 
     //game loop 
     sf::Clock clock;
@@ -24,25 +30,9 @@ int main()
                 window.close();
             }
         }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-        {
-            player.move(0,-speed*dt);
-        }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-        {
-            player.move(0,+speed*dt);
-        }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-        {
-            player.move(-speed*dt,0);
-        }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-        {
-            player.move(speed*dt,0);
-        }
-
+        player.updateState(dt);
         window.clear(sf::Color::Black);
-        window.draw(player);
+        player.draw(window);
         window.display();
     }
 }

@@ -20,7 +20,7 @@ class Entity
     virtual void takeDamage(int damage);
     virtual void die();
 
-    Entity(int h,int ap,float s , sf::Vector2f pos,sf::Shape* sh);//constructor 
+    Entity(int h,int ap,float s , sf::Vector2f pos);//constructor 
 
     virtual ~Entity() {};//destrucor
 };
