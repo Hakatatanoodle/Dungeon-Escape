@@ -24,3 +24,8 @@ void Entity::draw(sf::RenderWindow& window)
 {
     window.draw(*shape);
 }
+
+void Entity::attack(Entity& target)
+{
+    target.takeDamage(attackPower);
+}

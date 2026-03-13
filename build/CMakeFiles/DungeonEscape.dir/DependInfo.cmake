@@ -8,6 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/hakatatanoodle/Projects/DungeonEscape/src/Enemy.cpp" "CMakeFiles/DungeonEscape.dir/src/Enemy.cpp.o" "gcc" "CMakeFiles/DungeonEscape.dir/src/Enemy.cpp.o.d"
+  "/home/hakatatanoodle/Projects/DungeonEscape/src/Entity.cpp" "CMakeFiles/DungeonEscape.dir/src/Entity.cpp.o" "gcc" "CMakeFiles/DungeonEscape.dir/src/Entity.cpp.o.d"
+  "/home/hakatatanoodle/Projects/DungeonEscape/src/Player.cpp" "CMakeFiles/DungeonEscape.dir/src/Player.cpp.o" "gcc" "CMakeFiles/DungeonEscape.dir/src/Player.cpp.o.d"
   "/home/hakatatanoodle/Projects/DungeonEscape/src/main.cpp" "CMakeFiles/DungeonEscape.dir/src/main.cpp.o" "gcc" "CMakeFiles/DungeonEscape.dir/src/main.cpp.o.d"
   )
 

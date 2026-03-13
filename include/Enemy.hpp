@@ -6,15 +6,14 @@
 class Enemy: public Entity
 {
     protected:
+    int respawnCounter ;
 
     public:
 
-    Enemy(int h , int ap,float s , sf::Vector2f)
+    Enemy(int h , int ap,float s , sf::Vector2f pos);
 
-    virtual void draw(sf::RenderWindow& window);
-    virtual void move(float dt) = 0;
-    virtual void attack(Entity& target);
-    virtual void updateState(float dt);
+    virtual void move(float dt,sf::Vector2f playerPos) = 0;
+    virtual void updateState(float dt,sf::Vector2f playerPos);
 
     virtual ~Enemy() {};
 };

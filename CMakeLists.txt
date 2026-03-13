@@ -6,7 +6,9 @@ set(CMAKE_CXX_STANDARD 17)
 
 find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
 
-add_executable(DungeonEscape src/main.cpp src/Entity.cpp src/Player.cpp)
+add_executable(DungeonEscape src/main.cpp src/Entity.cpp src/Player.cpp src/Enemy.cpp)
+
+target_include_directories(DungeonEscape PRIVATE include)
 
 target_link_libraries(DungeonEscape sfml-graphics sfml-window sfml-system )
 

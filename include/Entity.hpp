@@ -13,10 +13,9 @@ class Entity
     bool isAlive ;
     
     public:
-    virtual void draw(sf::RenderWindow& window) = 0;
-    virtual void attack(Entity& target) = 0;
-    virtual void updateState(float dt) = 0;
-    virtual void move(float dt) = 0;
+    virtual void draw(sf::RenderWindow& window);
+    virtual void attack(Entity& target);
+    virtual void move(float dt,sf::Vector2f playerPos) = 0;
     virtual void takeDamage(int damage);
     virtual void die();
 

@@ -5,19 +5,9 @@
         collectedItems = 0;
         shape = new sf::RectangleShape(sf::Vector2f(50.f,50.f));
         shape->setFillColor(sf::Color::White);
-    }
+    }   
 
-    void Player::draw(sf::RenderWindow& window)
-    {
-        window.draw(*shape);
-    }
-
-    void Player::attack(Entity& target)
-    {
-        target.takeDamage(attackPower);
-    }
-
-    void Player::move(float dt)
+    void Player::move(float dt,sf::Vector2f playerPos)
     {
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::W))
         {
@@ -48,7 +38,7 @@
             health = 0;
             die();
         }
-        move(dt);
+        move(dt,position);
 
     }
 

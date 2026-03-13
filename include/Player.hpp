@@ -11,12 +11,10 @@ class Player: public Entity
     public:
     Player(int h,int ap,float s , sf::Vector2f);//constructor
 
-    virtual void draw(sf::RenderWindow& window);
-    virtual void attack(Entity& target);
     virtual void updateState(float dt) ;
-    virtual void move(float dt);
+    virtual void move(float dt,sf::Vector2f playerPos);
 
-    virtual ~Player() {};//destructor
+    virtual ~Player();//destructor
 
 };
 
