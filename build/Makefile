@@ -129,6 +129,30 @@ DungeonEscape/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/build
 .PHONY : DungeonEscape/fast
 
+src/Chaser.o: src/Chaser.cpp.o
+.PHONY : src/Chaser.o
+
+# target to build an object file
+src/Chaser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/src/Chaser.cpp.o
+.PHONY : src/Chaser.cpp.o
+
+src/Chaser.i: src/Chaser.cpp.i
+.PHONY : src/Chaser.i
+
+# target to preprocess a source file
+src/Chaser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/src/Chaser.cpp.i
+.PHONY : src/Chaser.cpp.i
+
+src/Chaser.s: src/Chaser.cpp.s
+.PHONY : src/Chaser.s
+
+# target to generate assembly for a file
+src/Chaser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/src/Chaser.cpp.s
+.PHONY : src/Chaser.cpp.s
+
 src/Enemy.o: src/Enemy.cpp.o
 .PHONY : src/Enemy.o
 
@@ -201,6 +225,30 @@ src/Player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/src/Player.cpp.s
 .PHONY : src/Player.cpp.s
 
+src/Stalker.o: src/Stalker.cpp.o
+.PHONY : src/Stalker.o
+
+# target to build an object file
+src/Stalker.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/src/Stalker.cpp.o
+.PHONY : src/Stalker.cpp.o
+
+src/Stalker.i: src/Stalker.cpp.i
+.PHONY : src/Stalker.i
+
+# target to preprocess a source file
+src/Stalker.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/src/Stalker.cpp.i
+.PHONY : src/Stalker.cpp.i
+
+src/Stalker.s: src/Stalker.cpp.s
+.PHONY : src/Stalker.s
+
+# target to generate assembly for a file
+src/Stalker.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/src/Stalker.cpp.s
+.PHONY : src/Stalker.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -225,6 +273,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/utils.o: src/utils.cpp.o
+.PHONY : src/utils.o
+
+# target to build an object file
+src/utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/src/utils.cpp.o
+.PHONY : src/utils.cpp.o
+
+src/utils.i: src/utils.cpp.i
+.PHONY : src/utils.i
+
+# target to preprocess a source file
+src/utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/src/utils.cpp.i
+.PHONY : src/utils.cpp.i
+
+src/utils.s: src/utils.cpp.s
+.PHONY : src/utils.s
+
+# target to generate assembly for a file
+src/utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/src/utils.cpp.s
+.PHONY : src/utils.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -234,6 +306,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... DungeonEscape"
+	@echo "... src/Chaser.o"
+	@echo "... src/Chaser.i"
+	@echo "... src/Chaser.s"
 	@echo "... src/Enemy.o"
 	@echo "... src/Enemy.i"
 	@echo "... src/Enemy.s"
@@ -243,9 +318,15 @@ help:
 	@echo "... src/Player.o"
 	@echo "... src/Player.i"
 	@echo "... src/Player.s"
+	@echo "... src/Stalker.o"
+	@echo "... src/Stalker.i"
+	@echo "... src/Stalker.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/utils.o"
+	@echo "... src/utils.i"
+	@echo "... src/utils.s"
 .PHONY : help
 
 

@@ -13,6 +13,10 @@ class Entity
     bool isAlive ;
     
     public:
+    //getter
+    sf::Vector2f getPosition() const;
+
+
     virtual void draw(sf::RenderWindow& window);
     virtual void attack(Entity& target);
     virtual void move(float dt,sf::Vector2f playerPos) = 0;

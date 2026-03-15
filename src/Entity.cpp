@@ -29,3 +29,8 @@ void Entity::attack(Entity& target)
 {
     target.takeDamage(attackPower);
 }
+
+sf::Vector2f Entity::getPosition() const
+{
+    return position;
+}

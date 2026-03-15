@@ -125,12 +125,57 @@ CMakeFiles/DungeonEscape.dir/src/Enemy.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DungeonEscape.dir/src/Enemy.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hakatatanoodle/Projects/DungeonEscape/src/Enemy.cpp -o CMakeFiles/DungeonEscape.dir/src/Enemy.cpp.s
 
+CMakeFiles/DungeonEscape.dir/src/Chaser.cpp.o: CMakeFiles/DungeonEscape.dir/flags.make
+CMakeFiles/DungeonEscape.dir/src/Chaser.cpp.o: /home/hakatatanoodle/Projects/DungeonEscape/src/Chaser.cpp
+CMakeFiles/DungeonEscape.dir/src/Chaser.cpp.o: CMakeFiles/DungeonEscape.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/hakatatanoodle/Projects/DungeonEscape/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/DungeonEscape.dir/src/Chaser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DungeonEscape.dir/src/Chaser.cpp.o -MF CMakeFiles/DungeonEscape.dir/src/Chaser.cpp.o.d -o CMakeFiles/DungeonEscape.dir/src/Chaser.cpp.o -c /home/hakatatanoodle/Projects/DungeonEscape/src/Chaser.cpp
+
+CMakeFiles/DungeonEscape.dir/src/Chaser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DungeonEscape.dir/src/Chaser.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hakatatanoodle/Projects/DungeonEscape/src/Chaser.cpp > CMakeFiles/DungeonEscape.dir/src/Chaser.cpp.i
+
+CMakeFiles/DungeonEscape.dir/src/Chaser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DungeonEscape.dir/src/Chaser.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hakatatanoodle/Projects/DungeonEscape/src/Chaser.cpp -o CMakeFiles/DungeonEscape.dir/src/Chaser.cpp.s
+
+CMakeFiles/DungeonEscape.dir/src/Stalker.cpp.o: CMakeFiles/DungeonEscape.dir/flags.make
+CMakeFiles/DungeonEscape.dir/src/Stalker.cpp.o: /home/hakatatanoodle/Projects/DungeonEscape/src/Stalker.cpp
+CMakeFiles/DungeonEscape.dir/src/Stalker.cpp.o: CMakeFiles/DungeonEscape.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/hakatatanoodle/Projects/DungeonEscape/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/DungeonEscape.dir/src/Stalker.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DungeonEscape.dir/src/Stalker.cpp.o -MF CMakeFiles/DungeonEscape.dir/src/Stalker.cpp.o.d -o CMakeFiles/DungeonEscape.dir/src/Stalker.cpp.o -c /home/hakatatanoodle/Projects/DungeonEscape/src/Stalker.cpp
+
+CMakeFiles/DungeonEscape.dir/src/Stalker.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DungeonEscape.dir/src/Stalker.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hakatatanoodle/Projects/DungeonEscape/src/Stalker.cpp > CMakeFiles/DungeonEscape.dir/src/Stalker.cpp.i
+
+CMakeFiles/DungeonEscape.dir/src/Stalker.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DungeonEscape.dir/src/Stalker.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hakatatanoodle/Projects/DungeonEscape/src/Stalker.cpp -o CMakeFiles/DungeonEscape.dir/src/Stalker.cpp.s
+
+CMakeFiles/DungeonEscape.dir/src/utils.cpp.o: CMakeFiles/DungeonEscape.dir/flags.make
+CMakeFiles/DungeonEscape.dir/src/utils.cpp.o: /home/hakatatanoodle/Projects/DungeonEscape/src/utils.cpp
+CMakeFiles/DungeonEscape.dir/src/utils.cpp.o: CMakeFiles/DungeonEscape.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/hakatatanoodle/Projects/DungeonEscape/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/DungeonEscape.dir/src/utils.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DungeonEscape.dir/src/utils.cpp.o -MF CMakeFiles/DungeonEscape.dir/src/utils.cpp.o.d -o CMakeFiles/DungeonEscape.dir/src/utils.cpp.o -c /home/hakatatanoodle/Projects/DungeonEscape/src/utils.cpp
+
+CMakeFiles/DungeonEscape.dir/src/utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DungeonEscape.dir/src/utils.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hakatatanoodle/Projects/DungeonEscape/src/utils.cpp > CMakeFiles/DungeonEscape.dir/src/utils.cpp.i
+
+CMakeFiles/DungeonEscape.dir/src/utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DungeonEscape.dir/src/utils.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hakatatanoodle/Projects/DungeonEscape/src/utils.cpp -o CMakeFiles/DungeonEscape.dir/src/utils.cpp.s
+
 # Object files for target DungeonEscape
 DungeonEscape_OBJECTS = \
 "CMakeFiles/DungeonEscape.dir/src/main.cpp.o" \
 "CMakeFiles/DungeonEscape.dir/src/Entity.cpp.o" \
 "CMakeFiles/DungeonEscape.dir/src/Player.cpp.o" \
-"CMakeFiles/DungeonEscape.dir/src/Enemy.cpp.o"
+"CMakeFiles/DungeonEscape.dir/src/Enemy.cpp.o" \
+"CMakeFiles/DungeonEscape.dir/src/Chaser.cpp.o" \
+"CMakeFiles/DungeonEscape.dir/src/Stalker.cpp.o" \
+"CMakeFiles/DungeonEscape.dir/src/utils.cpp.o"
 
 # External object files for target DungeonEscape
 DungeonEscape_EXTERNAL_OBJECTS =
@@ -139,12 +184,15 @@ DungeonEscape: CMakeFiles/DungeonEscape.dir/src/main.cpp.o
 DungeonEscape: CMakeFiles/DungeonEscape.dir/src/Entity.cpp.o
 DungeonEscape: CMakeFiles/DungeonEscape.dir/src/Player.cpp.o
 DungeonEscape: CMakeFiles/DungeonEscape.dir/src/Enemy.cpp.o
+DungeonEscape: CMakeFiles/DungeonEscape.dir/src/Chaser.cpp.o
+DungeonEscape: CMakeFiles/DungeonEscape.dir/src/Stalker.cpp.o
+DungeonEscape: CMakeFiles/DungeonEscape.dir/src/utils.cpp.o
 DungeonEscape: CMakeFiles/DungeonEscape.dir/build.make
 DungeonEscape: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.6.1
 DungeonEscape: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.6.1
 DungeonEscape: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.6.1
 DungeonEscape: CMakeFiles/DungeonEscape.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/hakatatanoodle/Projects/DungeonEscape/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable DungeonEscape"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/hakatatanoodle/Projects/DungeonEscape/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable DungeonEscape"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/DungeonEscape.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
