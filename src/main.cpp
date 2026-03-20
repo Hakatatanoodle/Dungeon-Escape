@@ -51,9 +51,8 @@ int main()
             }
         }
 
-        sf::Vector2f playerPosition = player.getPosition();
-        
         player.updateState(dt);
+        sf::Vector2f playerPosition = player.getPosition();
         chaser.updateState(dt,playerPosition);
         stalker.updateState(dt,playerPosition);
         window.clear(sf::Color::Black);

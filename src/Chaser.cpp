@@ -9,8 +9,9 @@ Chaser::Chaser(int h , int ap,float s , sf::Vector2f pos):Enemy(h,ap,s,pos)
 void Chaser::move(float dt , sf::Vector2f playerPos)
 {
     float dx,dy,distance;
-    dx = playerPos.x - position.x;
-    dy = playerPos.y - position.y;
+    sf::Vector2f currentPosition=shape->getPosition();
+    dx = playerPos.x - currentPosition.x;
+    dy = playerPos.y - currentPosition.y;
     distance = std::sqrt(dx*dx+dy*dy);
 
     //guard to protect 0/0 undefined behaviour division 
@@ -21,9 +22,6 @@ void Chaser::move(float dt , sf::Vector2f playerPos)
 
     dx = dx/distance; //normalize into  unit vector 
     dy = dy/distance; 
-
-    position.x+= dx*speed*dt;
-    position.y+=dy*speed*dt;
 
     shape->move(dx*speed*dt,dy*speed*dt);
 }

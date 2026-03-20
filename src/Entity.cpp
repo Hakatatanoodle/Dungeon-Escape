@@ -32,5 +32,5 @@ void Entity::attack(Entity& target)
 
 sf::Vector2f Entity::getPosition() const
 {
-    return position;
+    return shape->getPosition();
 }
