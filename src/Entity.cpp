@@ -6,6 +6,7 @@ Entity::Entity(int h,int ap,float s , sf::Vector2f pos):health(h),attackPower(ap
 }
 
 
+
 void Entity::takeDamage(int damage)
 {
     health-=damage;

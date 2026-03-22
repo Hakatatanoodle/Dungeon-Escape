@@ -7,6 +7,7 @@
 #include "Chaser.hpp"
 #include "Stalker.hpp"
 #include "Enemy.hpp"
+#include "Item.hpp"
 
 enum class GameState {RUNNING,LOST,WIN};
 class Game
@@ -17,7 +18,11 @@ class Game
     std::vector<Enemy*> enemies;  
     sf::Clock clock;
     GameState state;
+    std::vector<Item> items;
+    int totalItems;     
 
+    void checkCollision();
+    void checkItemCollision();
     void init();
     void handleEvents();
     void update(float dt);

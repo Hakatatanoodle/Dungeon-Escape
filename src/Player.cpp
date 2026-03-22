@@ -6,6 +6,7 @@
         shape = new sf::RectangleShape(sf::Vector2f(50.f,50.f));
         shape->setFillColor(sf::Color::White);
         shape->setPosition(pos);
+        damageCooldown = 1.0f;
     }   
 
     void Player::move(float dt,sf::Vector2f playerPos)
@@ -36,6 +37,16 @@
             die();
         }
         move(dt,position);
+
+    }
+
+    void Player::takeDamage(int damage)
+    {
+        if(damageClock.getElapsedTime().asSeconds()>=damageCooldown)
+        {
+            health -=damage;
+            damageClock.restart();
+        }
 
     }
 

@@ -15,7 +15,9 @@ class Entity
     public:
     //getter
     sf::Vector2f getPosition() const;
-
+    sf::Shape* getShape() const {return shape;}
+    int getAttackPower() const {return attackPower; } 
+    bool getAliveCondition() { return isAlive; }
 
     virtual void draw(sf::RenderWindow& window);
     virtual void attack(Entity& target);

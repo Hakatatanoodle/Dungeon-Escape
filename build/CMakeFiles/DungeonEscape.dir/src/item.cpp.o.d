@@ -1,12 +1,11 @@
-CMakeFiles/DungeonEscape.dir/src/main.cpp.o: \
- /home/hakatatanoodle/Projects/DungeonEscape/src/main.cpp \
- /usr/include/stdc-predef.h \
- /home/hakatatanoodle/Projects/DungeonEscape/include/Game.hpp \
- /usr/include/SFML/Graphics.hpp /usr/include/SFML/Window.hpp \
- /usr/include/SFML/System.hpp /usr/include/SFML/Config.hpp \
- /usr/include/SFML/System/Clock.hpp /usr/include/SFML/System/Export.hpp \
- /usr/include/SFML/System/Time.hpp /usr/include/SFML/System/Err.hpp \
- /usr/include/c++/13/ostream /usr/include/c++/13/bits/requires_hosted.h \
+CMakeFiles/DungeonEscape.dir/src/item.cpp.o: \
+ /home/hakatatanoodle/Projects/DungeonEscape/src/item.cpp \
+ /usr/include/stdc-predef.h /usr/include/SFML/Graphics.hpp \
+ /usr/include/SFML/Window.hpp /usr/include/SFML/System.hpp \
+ /usr/include/SFML/Config.hpp /usr/include/SFML/System/Clock.hpp \
+ /usr/include/SFML/System/Export.hpp /usr/include/SFML/System/Time.hpp \
+ /usr/include/SFML/System/Err.hpp /usr/include/c++/13/ostream \
+ /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -236,9 +235,4 @@ CMakeFiles/DungeonEscape.dir/src/main.cpp.o: \
  /usr/include/SFML/Graphics/Sprite.hpp \
  /usr/include/SFML/Graphics/Text.hpp \
  /usr/include/SFML/Graphics/VertexBuffer.hpp \
- /home/hakatatanoodle/Projects/DungeonEscape/include/Player.hpp \
- /home/hakatatanoodle/Projects/DungeonEscape/include/Entity.hpp \
- /home/hakatatanoodle/Projects/DungeonEscape/include/Chaser.hpp \
- /home/hakatatanoodle/Projects/DungeonEscape/include/Enemy.hpp \
- /home/hakatatanoodle/Projects/DungeonEscape/include/Stalker.hpp \
  /home/hakatatanoodle/Projects/DungeonEscape/include/Item.hpp
