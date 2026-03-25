@@ -47,9 +47,9 @@ void Game::checkCollision()
 
 void Game::checkItemCollision()
 {
-    for(Item&    i:items)
+    for(Item& i:items)
     {
-        if(player->getShape()->getGlobalBounds().intersects(i.getShape().getGlobalBounds()))
+        if(!i.isCollected() && player->getShape()->getGlobalBounds().intersects(i.getShape().getGlobalBounds()))
         {
             i.collect();
             player->setCollectedItem();

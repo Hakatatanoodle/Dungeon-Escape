@@ -922,6 +922,7 @@ CMakeFiles/DungeonEscape.dir/src/Game.cpp.o: /home/hakatatanoodle/Projects/Dunge
   /home/hakatatanoodle/Projects/DungeonEscape/include/Enemy.hpp \
   /home/hakatatanoodle/Projects/DungeonEscape/include/Entity.hpp \
   /home/hakatatanoodle/Projects/DungeonEscape/include/Game.hpp \
+  /home/hakatatanoodle/Projects/DungeonEscape/include/Item.hpp \
   /home/hakatatanoodle/Projects/DungeonEscape/include/Player.hpp \
   /home/hakatatanoodle/Projects/DungeonEscape/include/Stalker.hpp \
   /usr/include/SFML/Config.hpp \
@@ -2140,6 +2141,7 @@ CMakeFiles/DungeonEscape.dir/src/main.cpp.o: /home/hakatatanoodle/Projects/Dunge
   /home/hakatatanoodle/Projects/DungeonEscape/include/Enemy.hpp \
   /home/hakatatanoodle/Projects/DungeonEscape/include/Entity.hpp \
   /home/hakatatanoodle/Projects/DungeonEscape/include/Game.hpp \
+  /home/hakatatanoodle/Projects/DungeonEscape/include/Item.hpp \
   /home/hakatatanoodle/Projects/DungeonEscape/include/Player.hpp \
   /home/hakatatanoodle/Projects/DungeonEscape/include/Stalker.hpp \
   /usr/include/SFML/Config.hpp \
