@@ -5,6 +5,7 @@ Chaser::Chaser(int h , int ap,float s , sf::Vector2f pos):Enemy(h,ap,s,pos)
 {
     shape = new sf::CircleShape(40.f);
     shape->setFillColor(sf::Color::Red);
+    shape->setPosition(pos);
 }
 void Chaser::move(float dt , sf::Vector2f playerPos)
 {

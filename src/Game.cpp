@@ -19,6 +19,7 @@ void Game::init()
     items.push_back(Item(sf::Vector2f(700.f,450.f)));
     items.push_back(Item(sf::Vector2f(501.f,501.f)));
     totalItems=5;
+    waveManager = new WaveManager(enemies);
 }
 
 void Game::handleEvents()
@@ -29,6 +30,14 @@ void Game::handleEvents()
         if(event.type== sf::Event::Closed)
         {
             window.close();
+        }
+
+        if(event.type== sf::Event::KeyPressed   && event.key.code == sf::Keyboard::K)
+        {
+            for(Enemy* e:enemies)
+            {
+                e->takeDamage(9999);    
+            }
         }
     }
 }
@@ -80,6 +89,10 @@ void Game::update(float dt)
         {
             e->updateState(dt,playerPosition);//polymorphism
         } 
+    }
+    if(waveManager->isWaveCleared())
+    {
+        waveManager->spawnNextWave();
     }
 
 }

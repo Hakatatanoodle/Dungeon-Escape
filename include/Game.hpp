@@ -8,6 +8,7 @@
 #include "Stalker.hpp"
 #include "Enemy.hpp"
 #include "Item.hpp"
+#include "WaveManager.hpp"
 
 enum class GameState {RUNNING,LOST,WIN};
 class Game
@@ -19,7 +20,13 @@ class Game
     sf::Clock clock;
     GameState state;
     std::vector<Item> items;
-    int totalItems;     
+    int totalItems;
+    WaveManager* waveManager;     
+    sf::Font font;
+    sf::Text messageText;
+    sf::Text promptText;
+
+
 
     void checkCollision();
     void checkItemCollision();

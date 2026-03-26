@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/DungeonEscape.dir/src/Player.cpp.o.d"
   "CMakeFiles/DungeonEscape.dir/src/Stalker.cpp.o"
   "CMakeFiles/DungeonEscape.dir/src/Stalker.cpp.o.d"
+  "CMakeFiles/DungeonEscape.dir/src/WaveManager.cpp.o"
+  "CMakeFiles/DungeonEscape.dir/src/WaveManager.cpp.o.d"
   "CMakeFiles/DungeonEscape.dir/src/item.cpp.o"
   "CMakeFiles/DungeonEscape.dir/src/item.cpp.o.d"
   "CMakeFiles/DungeonEscape.dir/src/main.cpp.o"

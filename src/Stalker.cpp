@@ -6,6 +6,7 @@ Stalker::Stalker(int h , int ap,float s , sf::Vector2f pos):Enemy(h,ap,s,pos)
 {
     shape = new sf::CircleShape(50.f);
     shape->setFillColor(sf::Color::Cyan);
+    shape->setPosition(pos);
 }
 void Stalker::move(float dt , sf::Vector2f playerPos)
 {

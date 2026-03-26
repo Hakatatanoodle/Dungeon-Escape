@@ -273,6 +273,30 @@ src/Stalker.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/src/Stalker.cpp.s
 .PHONY : src/Stalker.cpp.s
 
+src/WaveManager.o: src/WaveManager.cpp.o
+.PHONY : src/WaveManager.o
+
+# target to build an object file
+src/WaveManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/src/WaveManager.cpp.o
+.PHONY : src/WaveManager.cpp.o
+
+src/WaveManager.i: src/WaveManager.cpp.i
+.PHONY : src/WaveManager.i
+
+# target to preprocess a source file
+src/WaveManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/src/WaveManager.cpp.i
+.PHONY : src/WaveManager.cpp.i
+
+src/WaveManager.s: src/WaveManager.cpp.s
+.PHONY : src/WaveManager.s
+
+# target to generate assembly for a file
+src/WaveManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/src/WaveManager.cpp.s
+.PHONY : src/WaveManager.cpp.s
+
 src/item.o: src/item.cpp.o
 .PHONY : src/item.o
 
@@ -372,6 +396,9 @@ help:
 	@echo "... src/Stalker.o"
 	@echo "... src/Stalker.i"
 	@echo "... src/Stalker.s"
+	@echo "... src/WaveManager.o"
+	@echo "... src/WaveManager.i"
+	@echo "... src/WaveManager.s"
 	@echo "... src/item.o"
 	@echo "... src/item.i"
 	@echo "... src/item.s"

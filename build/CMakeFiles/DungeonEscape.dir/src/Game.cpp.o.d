@@ -241,4 +241,5 @@ CMakeFiles/DungeonEscape.dir/src/Game.cpp.o: \
  /home/hakatatanoodle/Projects/DungeonEscape/include/Chaser.hpp \
  /home/hakatatanoodle/Projects/DungeonEscape/include/Enemy.hpp \
  /home/hakatatanoodle/Projects/DungeonEscape/include/Stalker.hpp \
- /home/hakatatanoodle/Projects/DungeonEscape/include/Item.hpp
+ /home/hakatatanoodle/Projects/DungeonEscape/include/Item.hpp \
+ /home/hakatatanoodle/Projects/DungeonEscape/include/WaveManager.hpp

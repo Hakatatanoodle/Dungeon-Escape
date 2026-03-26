@@ -13,7 +13,7 @@ WaveManager::WaveManager(std::vector<Enemy*>& enemiesRef):enemies(enemiesRef)
 bool WaveManager::isWaveCleared()
 { 
     for(Enemy* e: enemies)
-    {
+    {       
         if(e->getAliveCondition()) return false;
     }
     return true;    
