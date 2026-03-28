@@ -11,15 +11,44 @@ void Game::init()
     //new Player* player(100,100,100.f,sf::Vector2f(50.f,50.f));
     window.create(sf::VideoMode(800.f,600.f),"Dungeon Escape");
     player = new Player(100,100,200.f,sf::Vector2f(50.f,50.f));
+
     enemies.push_back(new Chaser(30, 10, 100.f, sf::Vector2f(600.f, 400.f)));
     enemies.push_back(new Stalker(100, 25, 50.f, sf::Vector2f(200.f, 200.f)));
+
     items.push_back(Item(sf::Vector2f(50.f,50.f)));
     items.push_back(Item(sf::Vector2f(150.f,150.f)));
     items.push_back(Item(sf::Vector2f(250.f,250.f)));
     items.push_back(Item(sf::Vector2f(700.f,450.f)));
     items.push_back(Item(sf::Vector2f(501.f,501.f)));
     totalItems=5;
+
     waveManager = new WaveManager(enemies);
+
+    font.loadFromFile("Assets/DejaVuSansMono.ttf");
+    messageText.setFont(font);
+    promptText.setFont(font);
+    messageText.setFillColor(sf::Color::White);
+    promptText.setFillColor(sf::Color::White);
+    messageText.setCharacterSize(60);
+    promptText.setCharacterSize(30);
+    messageText.setPosition(400.f,250.f);
+    promptText.setPosition(300.f,350.f);
+
+}
+
+void Game::restart()
+{
+    delete player;
+    for(Enemy* e:enemies)
+    {
+        delete e;
+    }
+    enemies.clear();
+    items.clear();
+    delete waveManager;
+    state= GameState::RUNNING;
+    init();
+
 }
 
 void Game::handleEvents()
@@ -31,6 +60,7 @@ void Game::handleEvents()
         {
             window.close();
         }
+        //for testing purpose only , will be removed later
 
         if(event.type== sf::Event::KeyPressed   && event.key.code == sf::Keyboard::K)
         {
@@ -38,6 +68,10 @@ void Game::handleEvents()
             {
                 e->takeDamage(9999);    
             }
+        }
+        if(event.type==sf::Event::KeyPressed && event.key.code == sf::Keyboard::R)
+        {
+            restart();
         }
     }
 }
@@ -100,6 +134,15 @@ void Game::update(float dt)
 void Game::render()
 {
     window.clear(sf::Color::Black);
+    if(state == GameState::LOST || state == GameState::WIN)
+    {
+        messageText.setString(state == GameState::WIN ? "YOU WIN" : "YOU LOST");
+        promptText.setString("Press R to Play Again");
+        window.draw(messageText);
+        window.draw(promptText);
+        window.display();
+        return;  // stop here, don't draw game
+    }
     if(player->getAliveCondition())
     {
         player->draw(window);
@@ -120,7 +163,9 @@ void Game::render()
     }
     window.display();
 
+
 }
+
 
 void Game::gameLoop()
 {
@@ -133,7 +178,6 @@ void Game::gameLoop()
 
         if(state==GameState::LOST || state==GameState::WIN)
         {
-            window.close();
         }
     }
 }   

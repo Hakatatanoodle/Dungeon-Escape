@@ -34,6 +34,7 @@ class Game
     void handleEvents();
     void update(float dt);
     void render();
+    void restart();
 
     public: 
     void gameLoop();
