@@ -15,6 +15,5 @@ class WaveManager
 
     WaveManager(std::vector<Enemy*>& enemiesRef);
 
-    ~WaveManager();
 };
 #endif

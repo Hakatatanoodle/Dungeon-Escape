@@ -3,13 +3,16 @@
 
 Game::Game(): player(nullptr),state(GameState::RUNNING)
 {
+    window.create(sf::VideoMode(800.f,600.f),"Dungeon Escape");
+    font.loadFromFile("Assets/DejaVuSansMono.ttf");
     init();//set initial state
+
 }
 void Game::init()
 {
     //stuck on init so decided to build later
     //new Player* player(100,100,100.f,sf::Vector2f(50.f,50.f));
-    window.create(sf::VideoMode(800.f,600.f),"Dungeon Escape");
+    
     player = new Player(100,100,200.f,sf::Vector2f(50.f,50.f));
 
     enemies.push_back(new Chaser(30, 10, 100.f, sf::Vector2f(600.f, 400.f)));
@@ -24,14 +27,13 @@ void Game::init()
 
     waveManager = new WaveManager(enemies);
 
-    font.loadFromFile("Assets/DejaVuSansMono.ttf");
     messageText.setFont(font);
     promptText.setFont(font);
     messageText.setFillColor(sf::Color::White);
     promptText.setFillColor(sf::Color::White);
     messageText.setCharacterSize(60);
     promptText.setCharacterSize(30);
-    messageText.setPosition(400.f,250.f);
+    messageText.setPosition(400.f,300.f);
     promptText.setPosition(300.f,350.f);
 
 }
@@ -104,6 +106,7 @@ void Game::checkItemCollision()
 
 void Game::update(float dt)
 {
+    if(state!=GameState::RUNNING) return;
     if(!player->getAliveCondition())
     {
         state = GameState::LOST;
