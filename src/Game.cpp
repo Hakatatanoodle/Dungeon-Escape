@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "Game.hpp"
+#include<cmath>
 
 Game::Game(): player(nullptr),state(GameState::RUNNING)
 {
@@ -62,14 +63,19 @@ void Game::handleEvents()
         {
             window.close();
         }
-        //for testing purpose only , will be removed later
-
-        if(event.type== sf::Event::KeyPressed   && event.key.code == sf::Keyboard::K)
+        
+        if(event.type==sf::Event::KeyPressed && event.key.code ==sf::Keyboard::Space)
         {
-            for(Enemy* e:enemies)
-            {
-                e->takeDamage(9999);    
-            }
+            float dx,dy,distance;
+            dx = sf::Mouse::getPosition(window).x - player->getPosition().x;
+            dy = sf::Mouse::getPosition(window).y - player->getPosition().y;
+            distance = sqrt(dx*dx+dy*dy);
+            //normalize
+            dx = dx/distance;
+            dy = dy/distance;
+        
+
+            bullets.push_back(Bullet(sf::Vector2f(dx,dy),player->getPosition()));
         }
         if(event.type==sf::Event::KeyPressed && event.key.code == sf::Keyboard::R)
         {
