@@ -16,6 +16,9 @@ class Bullet
     void move(float dt);
     bool isActive();
     sf::RectangleShape& getShape();
+    void draw(sf::RenderWindow& window);
+
+    void setActiveStatus(bool status);
 
 };
 #endif

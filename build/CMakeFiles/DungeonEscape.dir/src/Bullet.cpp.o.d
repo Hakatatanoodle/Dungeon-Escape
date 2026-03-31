@@ -1,7 +1,7 @@
-CMakeFiles/DungeonEscape.dir/src/main.cpp.o: \
- /home/hakatatanoodle/Projects/DungeonEscape/src/main.cpp \
+CMakeFiles/DungeonEscape.dir/src/Bullet.cpp.o: \
+ /home/hakatatanoodle/Projects/DungeonEscape/src/Bullet.cpp \
  /usr/include/stdc-predef.h \
- /home/hakatatanoodle/Projects/DungeonEscape/include/Game.hpp \
+ /home/hakatatanoodle/Projects/DungeonEscape/include/Bullet.hpp \
  /usr/include/SFML/Graphics.hpp /usr/include/SFML/Window.hpp \
  /usr/include/SFML/System.hpp /usr/include/SFML/Config.hpp \
  /usr/include/SFML/System/Clock.hpp /usr/include/SFML/System/Export.hpp \
@@ -235,12 +235,4 @@ CMakeFiles/DungeonEscape.dir/src/main.cpp.o: \
  /usr/include/SFML/Graphics/Glsl.hpp /usr/include/SFML/Graphics/Glsl.inl \
  /usr/include/SFML/Graphics/Sprite.hpp \
  /usr/include/SFML/Graphics/Text.hpp \
- /usr/include/SFML/Graphics/VertexBuffer.hpp \
- /home/hakatatanoodle/Projects/DungeonEscape/include/Player.hpp \
- /home/hakatatanoodle/Projects/DungeonEscape/include/Entity.hpp \
- /home/hakatatanoodle/Projects/DungeonEscape/include/Chaser.hpp \
- /home/hakatatanoodle/Projects/DungeonEscape/include/Enemy.hpp \
- /home/hakatatanoodle/Projects/DungeonEscape/include/Stalker.hpp \
- /home/hakatatanoodle/Projects/DungeonEscape/include/Item.hpp \
- /home/hakatatanoodle/Projects/DungeonEscape/include/WaveManager.hpp \
- /home/hakatatanoodle/Projects/DungeonEscape/include/Bullet.hpp
+ /usr/include/SFML/Graphics/VertexBuffer.hpp

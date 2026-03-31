@@ -9,6 +9,7 @@
 #include "Enemy.hpp"
 #include "Item.hpp"
 #include "WaveManager.hpp"
+#include "Bullet.hpp"
 
 enum class GameState {RUNNING,LOST,WIN};
 class Game
@@ -25,7 +26,7 @@ class Game
     sf::Font font;
     sf::Text messageText;
     sf::Text promptText;
-
+    std::vector<Bullet> bullets;
 
 
     void checkCollision();
@@ -35,6 +36,7 @@ class Game
     void update(float dt);
     void render();
     void restart();
+    void checkBulletCollision();
 
     public: 
     void gameLoop();

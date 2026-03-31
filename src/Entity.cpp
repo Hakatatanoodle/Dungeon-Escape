@@ -10,9 +10,10 @@ Entity::Entity(int h,int ap,float s , sf::Vector2f pos):health(h),attackPower(ap
 void Entity::takeDamage(int damage)
 {
     health-=damage;
-    if(health<0)
+    if(health<=0)
     {
         health = 0;
+        die();
     }
 }
 

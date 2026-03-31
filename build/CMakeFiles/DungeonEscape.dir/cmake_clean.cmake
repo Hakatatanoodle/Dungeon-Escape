@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/DungeonEscape.dir/src/Bullet.cpp.o"
+  "CMakeFiles/DungeonEscape.dir/src/Bullet.cpp.o.d"
   "CMakeFiles/DungeonEscape.dir/src/Chaser.cpp.o"
   "CMakeFiles/DungeonEscape.dir/src/Chaser.cpp.o.d"
   "CMakeFiles/DungeonEscape.dir/src/Enemy.cpp.o"

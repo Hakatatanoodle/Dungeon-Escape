@@ -16,6 +16,12 @@
         return active;
     }
 
+    void Bullet::setActiveStatus(bool status)
+    {
+        active = status;
+
+    }
+
     sf::RectangleShape& Bullet::getShape()
     {
         return shape;
@@ -28,4 +34,9 @@
         {
             active = false;
         }
+    }
+
+    void Bullet::draw(sf::RenderWindow& window)
+    {
+        window.draw(shape);
     }

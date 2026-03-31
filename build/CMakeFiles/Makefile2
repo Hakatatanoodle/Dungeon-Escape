@@ -81,12 +81,12 @@ clean: CMakeFiles/DungeonEscape.dir/clean
 CMakeFiles/DungeonEscape.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/hakatatanoodle/Projects/DungeonEscape/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target DungeonEscape"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/hakatatanoodle/Projects/DungeonEscape/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target DungeonEscape"
 .PHONY : CMakeFiles/DungeonEscape.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/DungeonEscape.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hakatatanoodle/Projects/DungeonEscape/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hakatatanoodle/Projects/DungeonEscape/build/CMakeFiles 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/DungeonEscape.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hakatatanoodle/Projects/DungeonEscape/build/CMakeFiles 0
 .PHONY : CMakeFiles/DungeonEscape.dir/rule

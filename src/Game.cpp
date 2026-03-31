@@ -1,205 +1,232 @@
-#include <SFML/Graphics.hpp>
-#include "Game.hpp"
-#include<cmath>
+    #include <SFML/Graphics.hpp>
+    #include "Game.hpp"
+    #include<cmath>
 
-Game::Game(): player(nullptr),state(GameState::RUNNING)
-{
-    window.create(sf::VideoMode(800.f,600.f),"Dungeon Escape");
-    font.loadFromFile("Assets/DejaVuSansMono.ttf");
-    init();//set initial state
-
-}
-void Game::init()
-{
-    //stuck on init so decided to build later
-    //new Player* player(100,100,100.f,sf::Vector2f(50.f,50.f));
-    
-    player = new Player(100,100,200.f,sf::Vector2f(50.f,50.f));
-
-    enemies.push_back(new Chaser(30, 10, 100.f, sf::Vector2f(600.f, 400.f)));
-    enemies.push_back(new Stalker(100, 25, 50.f, sf::Vector2f(200.f, 200.f)));
-
-    items.push_back(Item(sf::Vector2f(50.f,50.f)));
-    items.push_back(Item(sf::Vector2f(150.f,150.f)));
-    items.push_back(Item(sf::Vector2f(250.f,250.f)));
-    items.push_back(Item(sf::Vector2f(700.f,450.f)));
-    items.push_back(Item(sf::Vector2f(501.f,501.f)));
-    totalItems=5;
-
-    waveManager = new WaveManager(enemies);
-
-    messageText.setFont(font);
-    promptText.setFont(font);
-    messageText.setFillColor(sf::Color::White);
-    promptText.setFillColor(sf::Color::White);
-    messageText.setCharacterSize(60);
-    promptText.setCharacterSize(30);
-    messageText.setPosition(400.f,300.f);
-    promptText.setPosition(300.f,350.f);
-
-}
-
-void Game::restart()
-{
-    delete player;
-    for(Enemy* e:enemies)
+    Game::Game(): player(nullptr),state(GameState::RUNNING)
     {
-        delete e;
+        window.create(sf::VideoMode(800.f,600.f),"Dungeon Escape");
+        font.loadFromFile("Assets/DejaVuSansMono.ttf");
+        init();//set initial state
+
     }
-    enemies.clear();
-    items.clear();
-    delete waveManager;
-    state= GameState::RUNNING;
-    init();
-
-}
-
-void Game::handleEvents()
-{
-    sf::Event event;
-    while(window.pollEvent(event))
+    void Game::init()
     {
-        if(event.type== sf::Event::Closed)
+        //stuck on init so decided to build later
+        //new Player* player(100,100,100.f,sf::Vector2f(50.f,50.f));
+        
+        player = new Player(100,100,200.f,sf::Vector2f(50.f,50.f));
+
+        enemies.push_back(new Chaser(30, 10, 100.f, sf::Vector2f(600.f, 400.f)));
+        enemies.push_back(new Stalker(100, 25, 50.f, sf::Vector2f(200.f, 200.f)));
+
+        items.push_back(Item(sf::Vector2f(50.f,50.f)));
+        items.push_back(Item(sf::Vector2f(150.f,150.f)));
+        items.push_back(Item(sf::Vector2f(250.f,250.f)));
+        items.push_back(Item(sf::Vector2f(700.f,450.f)));
+        items.push_back(Item(sf::Vector2f(501.f,501.f)));
+        totalItems=5;
+
+        waveManager = new WaveManager(enemies);
+
+        messageText.setFont(font);
+        promptText.setFont(font);
+        messageText.setFillColor(sf::Color::White);
+        promptText.setFillColor(sf::Color::White);
+        messageText.setCharacterSize(60);
+        promptText.setCharacterSize(30);
+        messageText.setPosition(400.f,300.f);
+        promptText.setPosition(300.f,350.f);
+
+    }
+
+    void Game::restart()
+    {
+        delete player;
+        for(Enemy* e:enemies)
         {
-            window.close();
+            delete e;
+        }
+        enemies.clear();
+        items.clear();
+        delete waveManager;
+        state= GameState::RUNNING;
+        init();
+
+    }
+
+    void Game::handleEvents()
+    {
+        sf::Event event;
+        while(window.pollEvent(event))
+        {
+            if(event.type== sf::Event::Closed)
+            {
+                window.close();
+            }
+            
+            if(event.type==sf::Event::KeyPressed && event.key.code ==sf::Keyboard::Space)
+            {
+                float dx,dy,distance;
+                dx = sf::Mouse::getPosition(window).x - player->getPosition().x;
+                dy = sf::Mouse::getPosition(window).y - player->getPosition().y;
+                distance = sqrt(dx*dx+dy*dy);
+                //normalize
+                dx = dx/distance;
+                dy = dy/distance;
+            
+
+                bullets.push_back(Bullet(sf::Vector2f(dx,dy),player->getPosition()));
+            }
+            if(event.type==sf::Event::KeyPressed && event.key.code == sf::Keyboard::R)
+            {
+                restart();
+            }
+        }
+    }
+
+    void Game::checkCollision()
+    {
+        for(Entity* e: enemies)
+        {
+            if(player->getShape()->getGlobalBounds().intersects(e->getShape()->getGlobalBounds()))
+            {   
+                player->takeDamage(e->getAttackPower());
+            }
+        }
+
+    }
+
+    void Game::checkItemCollision()
+    {
+        for(Item& i:items)
+        {
+            if(!i.isCollected() && player->getShape()->getGlobalBounds().intersects(i.getShape().getGlobalBounds()))
+            {
+                i.collect();
+                player->setCollectedItem();
+            }
+
         }
         
-        if(event.type==sf::Event::KeyPressed && event.key.code ==sf::Keyboard::Space)
-        {
-            float dx,dy,distance;
-            dx = sf::Mouse::getPosition(window).x - player->getPosition().x;
-            dy = sf::Mouse::getPosition(window).y - player->getPosition().y;
-            distance = sqrt(dx*dx+dy*dy);
-            //normalize
-            dx = dx/distance;
-            dy = dy/distance;
-        
-
-            bullets.push_back(Bullet(sf::Vector2f(dx,dy),player->getPosition()));
-        }
-        if(event.type==sf::Event::KeyPressed && event.key.code == sf::Keyboard::R)
-        {
-            restart();
-        }
     }
-}
 
-void Game::checkCollision()
-{
-    for(Entity* e: enemies)
+    void Game::checkBulletCollision()
     {
-        if(player->getShape()->getGlobalBounds().intersects(e->getShape()->getGlobalBounds()))
-        {   
-            player->takeDamage(e->getAttackPower());
+        for(Bullet& b: bullets)
+        {
+            for(Enemy* e:enemies)
+            {
+                if(b.isActive() && e->getShape()->getGlobalBounds().intersects(b.getShape().getGlobalBounds()))
+                {
+                    e->takeDamage(player->getAttackPower());
+                    b.setActiveStatus(false);
+                } 
+
+            }
+            
         }
     }
 
-}
-
-void Game::checkItemCollision()
-{
-    for(Item& i:items)
+    void Game::update(float dt)
     {
-        if(!i.isCollected() && player->getShape()->getGlobalBounds().intersects(i.getShape().getGlobalBounds()))
+        if(state!=GameState::RUNNING) return;
+        if(!player->getAliveCondition())
         {
-            i.collect();
-            player->setCollectedItem();
+            state = GameState::LOST;
+        }
+        checkCollision();
+        checkItemCollision();
+        checkBulletCollision();
+        if(player->getCollectedItem()>=totalItems)
+        {
+            state = GameState::WIN;
+
+        }
+        player->updateState(dt);
+        sf::Vector2f playerPosition = player->getPosition();
+        for(Enemy* e : enemies)
+        {
+            if(e->getAliveCondition())
+            {
+                e->updateState(dt,playerPosition);//polymorphism
+            } 
+        }
+        for(Bullet& b:bullets)
+        {
+            if(b.isActive()) b.move(dt);
+        }
+
+        if(waveManager->isWaveCleared())
+        {
+            waveManager->spawnNextWave();
         }
 
     }
-    
-}
 
-void Game::update(float dt)
-{
-    if(state!=GameState::RUNNING) return;
-    if(!player->getAliveCondition())
+    void Game::render()
     {
-        state = GameState::LOST;
-    }
-    checkCollision();
-    checkItemCollision();
-    if(player->getCollectedItem()>=totalItems)
-    {
-        state = GameState::WIN;
-
-    }
-    player->updateState(dt);
-    sf::Vector2f playerPosition = player->getPosition();
-    for(Enemy* e : enemies)
-    {
-        if(e->getAliveCondition())
+        window.clear(sf::Color::Black);
+        if(state == GameState::LOST || state == GameState::WIN)
         {
-            e->updateState(dt,playerPosition);//polymorphism
-        } 
-    }
-    if(waveManager->isWaveCleared())
-    {
-        waveManager->spawnNextWave();
-    }
-
-}
-
-void Game::render()
-{
-    window.clear(sf::Color::Black);
-    if(state == GameState::LOST || state == GameState::WIN)
-    {
-        messageText.setString(state == GameState::WIN ? "YOU WIN" : "YOU LOST");
-        promptText.setString("Press R to Play Again");
-        window.draw(messageText);
-        window.draw(promptText);
+            messageText.setString(state == GameState::WIN ? "YOU WIN" : "YOU LOST");
+            promptText.setString("Press R to Play Again");
+            window.draw(messageText);
+            window.draw(promptText);
+            window.display();
+            return;  // stop here, don't draw game
+        }
+        if(player->getAliveCondition())
+        {
+            player->draw(window);
+        }
+        for(Entity* e: enemies)
+        {
+            if(e->getAliveCondition()==true)
+            {
+                e->draw(window);
+            }
+        }
+        for(Item& i:items)
+        {
+            if(!i.isCollected())
+            {
+                i.draw(window);
+            }
+        }
+        for(Bullet& b:bullets)
+        {
+            b.draw(window);
+        }
         window.display();
-        return;  // stop here, don't draw game
+
+
     }
-    if(player->getAliveCondition())
+
+
+    void Game::gameLoop()
     {
-        player->draw(window);
-    }
-    for(Entity* e: enemies)
-    {
-        if(e->getAliveCondition()==true)
+        while(window.isOpen())
         {
-            e->draw(window);
+            float dt = clock.restart().asSeconds();
+            handleEvents();
+            update(dt);
+            render();
+
+            if(state==GameState::LOST || state==GameState::WIN)
+            {
+            }
+        }
+    }   
+
+
+
+    Game::~Game()
+    {
+
+        delete player;
+        for(Enemy* e: enemies)
+        {
+            delete e;
         }
     }
-    for(Item& i:items)
-    {
-        if(!i.isCollected())
-        {
-            i.draw(window);
-        }
-    }
-    window.display();
-
-
-}
-
-
-void Game::gameLoop()
-{
-    while(window.isOpen())
-    {
-        float dt = clock.restart().asSeconds();
-        handleEvents();
-        update(dt);
-        render();
-
-        if(state==GameState::LOST || state==GameState::WIN)
-        {
-        }
-    }
-}   
-
-
-
-Game::~Game()
-{
-
-    delete player;
-    for(Enemy* e: enemies)
-    {
-        delete e;
-    }
-}
 

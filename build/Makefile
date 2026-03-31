@@ -129,6 +129,30 @@ DungeonEscape/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/build
 .PHONY : DungeonEscape/fast
 
+src/Bullet.o: src/Bullet.cpp.o
+.PHONY : src/Bullet.o
+
+# target to build an object file
+src/Bullet.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/src/Bullet.cpp.o
+.PHONY : src/Bullet.cpp.o
+
+src/Bullet.i: src/Bullet.cpp.i
+.PHONY : src/Bullet.i
+
+# target to preprocess a source file
+src/Bullet.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/src/Bullet.cpp.i
+.PHONY : src/Bullet.cpp.i
+
+src/Bullet.s: src/Bullet.cpp.s
+.PHONY : src/Bullet.s
+
+# target to generate assembly for a file
+src/Bullet.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DungeonEscape.dir/build.make CMakeFiles/DungeonEscape.dir/src/Bullet.cpp.s
+.PHONY : src/Bullet.cpp.s
+
 src/Chaser.o: src/Chaser.cpp.o
 .PHONY : src/Chaser.o
 
@@ -378,6 +402,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... DungeonEscape"
+	@echo "... src/Bullet.o"
+	@echo "... src/Bullet.i"
+	@echo "... src/Bullet.s"
 	@echo "... src/Chaser.o"
 	@echo "... src/Chaser.i"
 	@echo "... src/Chaser.s"
