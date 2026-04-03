@@ -16,17 +16,10 @@
         
         player = new Player(100,100,200.f,sf::Vector2f(50.f,50.f));
 
-        enemies.push_back(new Chaser(30, 10, 100.f, sf::Vector2f(600.f, 400.f)));
-        enemies.push_back(new Stalker(100, 25, 50.f, sf::Vector2f(200.f, 200.f)));
+        enemies.push_back(new Chaser(3000, 10, 100.f, sf::Vector2f(600.f, 400.f)));
+        enemies.push_back(new Stalker(1000, 25, 50.f, sf::Vector2f(200.f, 200.f)));
 
-        items.push_back(Item(sf::Vector2f(50.f,50.f)));
-        items.push_back(Item(sf::Vector2f(150.f,150.f)));
-        items.push_back(Item(sf::Vector2f(250.f,250.f)));
-        items.push_back(Item(sf::Vector2f(700.f,450.f)));
-        items.push_back(Item(sf::Vector2f(501.f,501.f)));
-        totalItems=5;
-
-        waveManager = new WaveManager(enemies);
+        waveManager = new WaveManager(enemies,items);
 
         messageText.setFont(font);
         promptText.setFont(font);
@@ -36,6 +29,7 @@
         promptText.setCharacterSize(30);
         messageText.setPosition(400.f,300.f);
         promptText.setPosition(300.f,350.f);
+        totalItems = 5;
 
     }
 
@@ -88,7 +82,7 @@
     {
         for(Entity* e: enemies)
         {
-            if(player->getShape()->getGlobalBounds().intersects(e->getShape()->getGlobalBounds()))
+            if(e->getAliveCondition() && player->getShape()->getGlobalBounds().intersects(e->getShape()->getGlobalBounds()))
             {   
                 player->takeDamage(e->getAttackPower());
             }
@@ -116,7 +110,7 @@
         {
             for(Enemy* e:enemies)
             {
-                if(b.isActive() && e->getShape()->getGlobalBounds().intersects(b.getShape().getGlobalBounds()))
+                if(b.isActive() && e->getAliveCondition() && e->getShape()->getGlobalBounds().intersects(b.getShape().getGlobalBounds()))
                 {
                     e->takeDamage(player->getAttackPower());
                     b.setActiveStatus(false);
@@ -195,7 +189,7 @@
         }
         for(Bullet& b:bullets)
         {
-            b.draw(window);
+             if(b.isActive()) b.draw(window);
         }
         window.display();
 

@@ -5,6 +5,7 @@
 class Entity
 {
     protected:
+    int maxHealth;
     int health;
     int attackPower;
     float speed;

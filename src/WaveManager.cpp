@@ -3,7 +3,7 @@
 #include "Chaser.hpp"
 #include "Stalker.hpp"
 
-WaveManager::WaveManager(std::vector<Enemy*>& enemiesRef):enemies(enemiesRef)
+WaveManager::WaveManager(std::vector<Enemy*>& enemiesRef,std::vector<Item>& itemRef):enemies(enemiesRef),items(itemRef)
 {
     currentWave = 1;
 
@@ -38,4 +38,5 @@ void WaveManager::spawnNextWave()
             enemies.push_back(new Stalker(100+2*currentWave,25+2*currentWave,59.f+2*currentWave,sf::Vector2f(utility::randomFloatGenerator(0,790),utility::randomFloatGenerator(0,590))));
         }
     }
+    items.push_back(Item(sf::Vector2f(utility::randomFloatGenerator(0,790),utility::randomFloatGenerator(0,590))));
 }   

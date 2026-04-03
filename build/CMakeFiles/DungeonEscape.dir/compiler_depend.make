@@ -2170,6 +2170,7 @@ CMakeFiles/DungeonEscape.dir/src/WaveManager.cpp.o: /home/hakatatanoodle/Project
   /home/hakatatanoodle/Projects/DungeonEscape/include/Chaser.hpp \
   /home/hakatatanoodle/Projects/DungeonEscape/include/Enemy.hpp \
   /home/hakatatanoodle/Projects/DungeonEscape/include/Entity.hpp \
+  /home/hakatatanoodle/Projects/DungeonEscape/include/Item.hpp \
   /home/hakatatanoodle/Projects/DungeonEscape/include/Stalker.hpp \
   /home/hakatatanoodle/Projects/DungeonEscape/include/WaveManager.hpp \
   /home/hakatatanoodle/Projects/DungeonEscape/include/utils.hpp \

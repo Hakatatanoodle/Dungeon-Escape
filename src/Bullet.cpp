@@ -38,5 +38,8 @@
 
     void Bullet::draw(sf::RenderWindow& window)
     {
-        window.draw(shape);
+        if(active)
+        {
+            window.draw(shape);
+        }
     }

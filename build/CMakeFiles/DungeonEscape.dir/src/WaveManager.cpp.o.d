@@ -239,6 +239,7 @@ CMakeFiles/DungeonEscape.dir/src/WaveManager.cpp.o: \
  /usr/include/SFML/Graphics/Sprite.hpp \
  /usr/include/SFML/Graphics/Text.hpp \
  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+ /home/hakatatanoodle/Projects/DungeonEscape/include/Item.hpp \
  /home/hakatatanoodle/Projects/DungeonEscape/include/utils.hpp \
  /home/hakatatanoodle/Projects/DungeonEscape/include/Chaser.hpp \
  /home/hakatatanoodle/Projects/DungeonEscape/include/Stalker.hpp
